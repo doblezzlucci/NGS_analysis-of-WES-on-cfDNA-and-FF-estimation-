@@ -59,10 +59,15 @@ Un modèle de machine Learning RandomForest non supervisé a été développé d
 Des features d’entrainement ont été prises en compte comme : 
 
 ● SOR : Score du test de biais de brin mesurant  la présence de l’allèle de référence et alterne dans le brin du sens 5’ a 3’ et de et de 3’ a 5’.
+
 ● MQ : Qualité moyenne de l’alignement sur le site de l’allèle alterne 
+
 ● MQRankSum : Score du test de biais de la qualité moyenne de l’alignement entre l’allèle de référence et l’allèle alterne .
+
 ● ReadPosRankSum : Score du test de la position moyennes des bases des allèles alterne par rapport aux allèle référence sur le brin 
-●Depth : Profondeur des reads = 
+
+●Depth : Profondeur des reads 
+
 ●Indel :  en leur attribuant un score binaire qui qualifie leur absence par 0 ou présence par 1 
 
 Par la suite, 800 estimateurs ont été fixés comme paramètre. 75% des données ont été réparties dans le groupe d’apprentissage et 25% dans le groupe test.

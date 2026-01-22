@@ -3,6 +3,10 @@
 
 ## 1. Pipeline bio-informatique 
 
+Ce travail a été largement inspiré de la publication  de Brand et al. 
+
+rand H, Whelan CW, Duyzend M, et al. High-resolution and noninvasive fetal exome screening.
+N Engl J Med 2023;389:2014-6. DOI: 10.1056/NEJMc2216144
 
 ## 1.1. Base calling, démultiplexage et contrôle qualité	
 

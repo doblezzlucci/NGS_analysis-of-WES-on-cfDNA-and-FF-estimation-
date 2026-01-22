@@ -10,7 +10,7 @@ N Engl J Med 2023;389:2014-6. DOI: 10.1056/NEJMc2216144
 
 ## 1.1. Base calling, démultiplexage et contrôle qualité	
 
-Le sequençage des librairies a été réalisé selon le parametre OverrideCycles,U7N1Y143;I10;I10;U7N1Y143. En effet, la librairie contient 2 index de 10 nucleotides, le sequençage de l’insert est fait dans les 2 sens sur 151 cycles (151 nt) et les inserts sont encadrés par des UMI de 7 + 1 nt. (voir samplesheet en annexe)
+Le sequençage des librairies a été réalisé selon le parametre OverrideCycles,U7N1Y143;I10;I10;U7N1Y143. En effet, la librairie contient 2 index de 10 nucleotides, le sequençage de l’insert est fait dans les 2 sens sur 151 cycles (151 nt) et les inserts sont encadrés par des UMI de 7 + 1 nt. 
 Les fichiers bcl contiennent les images sortant du séquenceur illumina (données brutes). Le base Calling (appel des bases) est la première étape et consistait à inférer la séquence des inserts dans les deux sens (matrice et anti-sens) et à démultiplexer ces séquences entre tous les patients présents en 2 fichiers fastq contenant respectivement leur reads dans le sens 5’ à 3’ et 3’ à 5’ à l’aide de l’outil bcl-convert fournit par Illumina selon les instructions contenues dans notre samplesheet  :
 ```
 nohup /usr/local/bin/bcl-convert -bcl-input-directory --output-directory --samplesheet
@@ -90,7 +90,7 @@ Les variants ont été filtres selon leurs VAF et leurs Z-scores (voir annexe 2)
 
 Le modèle de l’estimation de la fraction fœtale est un modèle de Deep Learning probabiliste qui va simultanément prédire la fraction fœtale et assigner un génotype pour les variants répertoriés dans notre séquence d’ADN circulant.
 Le modèle a été défini sur 2 dimensions qui sont respectivement la VAF et le Z-score du FragmentSizeRankSumTest.
-le script est disponible sous le nom    ** fragment_size_rank_sum.py **
+le script est disponible sous le nom **« fragment_size_rank_sum.py»** 
 
 La fraction fœtale a été définie en tant que variable latente (f) qui a permis de définir les distributions moyenne de 5 clusters de 5 génotypes différents dont les moyennes de distribution respectives sont calculées comme suit : 
 

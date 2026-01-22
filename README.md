@@ -38,8 +38,6 @@ La qualité de l’alignement a été vérifié à travers le rapport Html fourn
 ## 1.4. Filtration des variants	
 
 
-
-
 L’utilisation d’outil informatique de prediction basé sur un apprentissage necessite des donnees de bonne qualitée. Il a été essentiel de filtrer les artefacts techniques. les artefacts qui sont des faux positifs dus à des erreurs de séquençage ou de préparation des librairies mais classifies en tant que variants ont été filtrés suivant deux  étapes :
 
 •	Filtrer les indels 
@@ -92,6 +90,8 @@ Les variants ont été filtres selon leurs VAF et leurs Z-scores (voir annexe 2)
 
 Le modèle de l’estimation de la fraction fœtale est un modèle de Deep Learning probabiliste qui va simultanément prédire la fraction fœtale et assigner un génotype pour les variants répertoriés dans notre séquence d’ADN circulant.
 Le modèle a été défini sur 2 dimensions qui sont respectivement la VAF et le Z-score du FragmentSizeRankSumTest.
+le script est disponible sous le nom    ** fragment_size_rank_sum.py **
+
 La fraction fœtale a été définie en tant que variable latente (f) qui a permis de définir les distributions moyenne de 5 clusters de 5 génotypes différents dont les moyennes de distribution respectives sont calculées comme suit : 
 
 • (“cluster 0”: foetal 0/1, maternel 0/0): f / 2

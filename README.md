@@ -84,10 +84,13 @@ Le script permettant la filtration selon le modèle **« RandomForest2.py »**  
 
 ### Filtrer les  VAF et la longueur des inserts
 
-Les variants ont été filtres selon leurs VAF et leurs Z-scores (voir annexe 2) en admettant un intervalle de [0.025 0.975] pour les VAF et un intervalle [-4 4] pour le Z-score.
+Les variants ont été filtres selon leurs VAF et leurs Z-scores  en admettant un intervalle de [0.025 0.975] pour les VAF et un intervalle [-4 4] pour le Z-score. 
+cette opération a été realise à l'aide du script **« datawithvaf.py  »** 
 
 ### 	Génotypage et modélisation des de la fraction fœtale 
 
+Le'etape du preprocessing c';est a dire l'ajustement des format des inputs a été réalisée avec le  script   
+**« Deep_datapreprocess.py»** 
 Le modèle de l’estimation de la fraction fœtale est un modèle de Deep Learning probabiliste qui va simultanément prédire la fraction fœtale et assigner un génotype pour les variants répertoriés dans notre séquence d’ADN circulant.
 Le modèle a été défini sur 2 dimensions qui sont respectivement la VAF et le Z-score du FragmentSizeRankSumTest.
 le script est disponible sous le nom **« fragment_size_rank_sum.py»** 

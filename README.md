@@ -74,8 +74,11 @@ Ensuite, Ces variants ont été tries selon leur probabilité à travers un scor
 Les variants ont été afin de classer selon leur probabilité d’appartenance aux variants fréquents en attribuant un label « PASS » aux variants fréquents qui a été donc supérieure au Cutoff et un label « FAIL »  pour le reste des variants .
 
 Les données utiles sont extraites du fichier VCF à l’aide de bcftools en utilisant l’option 
-query -f '%CHROM\t%POS\t%REF\t%ALT\t%SOR\t%MQ\t%MQRankSum\t%ReadPosRankSum\ t%DP’ 
+```
+bcftools
+query -f '%CHROM\t%POS\t%REF\t%ALT\t%SOR\t%MQ\t%MQRankSum\t%ReadPosRankSum\ t%DP’
 
+```
 Le script permettant la filtration selon le modèle **« RandomForest2.py »**  est disponible depuis GitHub. 
 
 ## 1.5. Estimation de la fraction fœtale et génotypage des variants 

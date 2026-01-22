@@ -75,11 +75,11 @@ Le script permettant la filtration selon le modèle **« RandomForest2.py »**  
 
 <img width="1027" height="498" alt="image" src="https://github.com/user-attachments/assets/18c11efb-7d08-42f2-8393-556b7d0b98ba" />
 
-•	Filtrer les  VAF et la longueur des inserts
+### Filtrer les  VAF et la longueur des inserts
 
 Les variants ont été filtres selon leurs VAF et leurs Z-scores (voir annexe 2) en admettant un intervalle de [0.025 0.975] pour les VAF et un intervalle [-4 4] pour le Z-score.
 
-•	Génotypage et modélisation des de la fraction fœtale 
+### 	Génotypage et modélisation des de la fraction fœtale 
 
 Le modèle de l’estimation de la fraction fœtale est un modèle de Deep Learning probabiliste qui va simultanément prédire la fraction fœtale et assigner un génotype pour les variants répertoriés dans notre séquence d’ADN circulant.
 Le modèle a été défini sur 2 dimensions qui sont respectivement la VAF et le Z-score du FragmentSizeRankSumTest.
@@ -92,8 +92,8 @@ La fraction fœtale a été définie en tant que variable latente (f) qui a perm
 • (“cluster 4: foetal 0/1, maternel 1/1”): 1 - (f / 2)
 
 
-
 (0 : allèle de réference,1 : allèle alterne).
+
 Le modèle a été établi à partir de la librairie Pyro de Pytorch. Chaque cluster a été modélisé de manière indépendante selon la variation stochastique avec le guide Auto_Delta de Pyro pour l’apprentissage sur les paramètres latents.  Ceci a permis d’assigner une probabilité de chaque variant d’appartenir aux 5 différents clusters décrits ci-dessus.
 Par conséquent, les génotypes maternels et fœtaux ont été déduits à partir des probabilités p de chaque variant d’appartenir à un cluster spécifique :
 
@@ -103,4 +103,5 @@ Fœtal homozygote alterne 1/1= p (cluster 3)
 Maternel homozygote référence 0/0= p (cluster 0)
 Maternel hétérozygote 0/1= p (cluster 1) + p (cluster 2) + p (cluster 3)
 Maternel homozygote alterne 1/1= p (cluster 3)
+
 Le script du modèle **« ML_fetal.py »** est disponible depuis le lien GitHub

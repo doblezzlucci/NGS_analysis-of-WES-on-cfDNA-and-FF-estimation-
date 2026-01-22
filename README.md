@@ -33,7 +33,7 @@ La qualité de l’alignement a été vérifié à travers le rapport Html fourn
  
 ## 1.4. Filtration des variants	
 
-<img width="919" height="550" alt="image" src="https://github.com/user-attachments/assets/2c00bbfe-5c02-408a-a620-3a9f0e2c1fec" />
+
 
 
 L’utilisation d’outil informatique de prediction basé sur un apprentissage necessite des donnees de bonne qualitée. Il a été essentiel de filtrer les artefacts techniques. les artefacts qui sont des faux positifs dus à des erreurs de séquençage ou de préparation des librairies mais classifies en tant que variants ont été filtrés suivant deux  étapes :
@@ -44,6 +44,10 @@ L’utilisation d’outil informatique de prediction basé sur un apprentissage 
 Cette étape a été réalisée en python avec le script « vcf_indel_filter.py » disponible depuis GitHub.
 
 •	Filtrer les artéfacts avec Random Forest
+
+<img width="919" height="550" alt="image" src="https://github.com/user-attachments/assets/2c00bbfe-5c02-408a-a620-3a9f0e2c1fec" />
+
+<img width="1014" height="563" alt="Modele Random forest 2 " src="https://github.com/user-attachments/assets/ab78dcda-3f9c-44a5-90ef-73ed2ce615b4" />
 
 
 Un modèle de machine Learning RandomForest non supervisé a été développé dans le but de classer les variants selon un score de confiance. Pour cela, le modèle doit apprendre sur un set de données considéré comme vrai. L’idée originale de Brand et al a été de se baser sur les variants fréquents dans la population générale. En d’autres termes, le modèle a été entrainé a reconnaitre les variants fréquents dans la population générale en utilisant des donnees intrinseques (genotype) et technique uniquement. L’outil ne sera pas capable de prédire la fréquence du variant dans la population générale mais reconnaitra les caractéristique des vraix variants.

@@ -41,7 +41,7 @@ L’utilisation d’outil informatique de prediction basé sur un apprentissage 
 •	Filtrer les indels 
 
  Si au moins deux allèles alternatifs  sont localises sur la même position par rapport au génome de référence et qu’au moins l’un des allèles alternatif est un indel, alors tous les allèles alternatifs dans cette même  position ont été filtrés.
-Cette étape a été réalisée en python avec le script « vcf_indel_filter.py » disponible depuis GitHub.
+Cette étape a été réalisée en python avec le script **« vcf_indel_filter.py »** disponible depuis GitHub.
 
 •	Filtrer les artéfacts avec Random Forest
 
@@ -69,7 +69,7 @@ Les variants ont été afin de classer selon leur probabilité d’appartenance 
 Les données utiles sont extraites du fichier VCF à l’aide de bcftools en utilisant l’option 
 query -f '%CHROM\t%POS\t%REF\t%ALT\t%SOR\t%MQ\t%MQRankSum\t%ReadPosRankSum\ t%DP’ 
 
-Le script permettant la filtration selon le modèle « RandomForest2.py » est disponible depuis GitHub. 
+Le script permettant la filtration selon le modèle **« RandomForest2.py »**  est disponible depuis GitHub. 
 
 ## 1.5. Estimation de la fraction fœtale et génotypage des variants 
 
@@ -103,4 +103,4 @@ Fœtal homozygote alterne 1/1= p (cluster 3)
 Maternel homozygote référence 0/0= p (cluster 0)
 Maternel hétérozygote 0/1= p (cluster 1) + p (cluster 2) + p (cluster 3)
 Maternel homozygote alterne 1/1= p (cluster 3)
-Le script du modèle « ML_fetal.py » est disponible depuis le lien GitHub
+Le script du modèle **« ML_fetal.py »** est disponible depuis le lien GitHub

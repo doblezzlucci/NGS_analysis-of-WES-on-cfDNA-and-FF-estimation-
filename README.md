@@ -101,9 +101,13 @@ le script est disponible sous le nom **« fragment_size_rank_sum.py»**
 La fraction fœtale a été définie en tant que variable latente (f) qui a permis de définir les distributions moyenne de 5 clusters de 5 génotypes différents dont les moyennes de distribution respectives sont calculées comme suit : 
 
 • (“cluster 0”: foetal 0/1, maternel 0/0): f / 2
+
 • (“cluster 1: foetal 0/0, maternel 0/1”): (1 - f) / 2 
+
 • (“cluster 2: foetal 0/1, maternel 0/1”): 0.5
+
 • (“cluster 3: foetal 1/1, maternel 0/1”): f + (1 - f) / 2
+
 • (“cluster 4: foetal 0/1, maternel 1/1”): 1 - (f / 2)
 
 
@@ -113,10 +117,15 @@ Le modèle a été établi à partir de la librairie Pyro de Pytorch. Chaque clu
 Par conséquent, les génotypes maternels et fœtaux ont été déduits à partir des probabilités p de chaque variant d’appartenir à un cluster spécifique :
 
 Fœtal homozygote référence 0/0= p (cluster 1)
+
 Fœtal heterozygote référence 0/1= p (cluster 0) + p (cluster 2) + p (cluster 4) 
+
 Fœtal homozygote alterne 1/1= p (cluster 3)
+
 Maternel homozygote référence 0/0= p (cluster 0)
+
 Maternel hétérozygote 0/1= p (cluster 1) + p (cluster 2) + p (cluster 3)
+
 Maternel homozygote alterne 1/1= p (cluster 3)
 
 Le script du modèle **« ML_fetal.py »** est disponible depuis le lien GitHub
